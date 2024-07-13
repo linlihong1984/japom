@@ -1,16 +1,1 @@
-name: API Caller
 
-on:
-  schedule:
-    - cron: '* * * * *' # 每分钟运行一次
-
-jobs:
-  call-api:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Call API
-      run: |
-        while true; do
-          curl -X GET "https://api.day.app/iZLdKkUubvm7Lt2EPihNvi/$(date +%s)"
-          sleep 60 # 等待60秒
-        done
